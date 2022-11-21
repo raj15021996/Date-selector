@@ -43,13 +43,6 @@ const renderCalendar = (current) => {
   }
 
   for (let i = 1; i <= lastDay; i++) {
-
-    // if (
-    //   i === new Date().getDate() &&
-    //   date.getMonth() === new Date().getMonth()
-    // ) {
-    //   days += `<div id="today" value=${i}>${i}</div>`;
-    // }
    if(i === Number(current) )
     {
       days += `<div id="current" value=${i}>${i}</div>`; 
@@ -57,15 +50,7 @@ const renderCalendar = (current) => {
     else{
       days += `<div class='current1' value=${i}>${i}</div>`;
     }
-        
-  //  const n=document.getElementById('current1')
-  //   if(i=== Number(current)){
-  //      n.style.backgroundColor='white';
-  //   }
   }
-   
-
-  console.log(no)
 
   for (let j = 1; j <= nextDays; j++) {
     days += `<div class="next-date">${j}</div>`;
@@ -90,7 +75,7 @@ setYears.addEventListener("change", () => {
 
 let dateValue=document.querySelector("#date_input");
 let setDates=document.querySelector("#btn");
-let no=[];
+
 
 setDates.addEventListener("click", () => {
  let x = dateValue.value;
@@ -99,4 +84,5 @@ setDates.addEventListener("click", () => {
   }
   renderCalendar(x);
  dateValue.value="";
+
 }); 
